@@ -1,8 +1,8 @@
 // =================================================================
 //
 // File: activity.h
-// Author:
-// Date:
+// Author:URI JARED GOPAR MORALES_A01709413
+// Date:23/08/2022
 //
 // =================================================================
 #ifndef ACTIVITY_H
@@ -14,9 +14,14 @@
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity: o(n)
 // =================================================================
-unsigned int sumaIterativa(unsigned int n) {
+unsigned int sumaIterativa(unsigned int num) {
+	int suma=0;
+    	for (int i=1;i<=num;i++){
+        suma+=i; 
+    }
+    return suma; 
 	return 0;
 }
 
@@ -26,10 +31,18 @@ unsigned int sumaIterativa(unsigned int n) {
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity:o(n)
 // =================================================================
-unsigned int sumaRecursiva(unsigned int n) {
-	return 0;
+unsigned int sumaRecursiva(unsigned int num) {
+	if(num==1){ //caso base
+        num=1;
+    }
+    else{ //caso general
+        num=num+sumaRecursiva(num-1);
+    }
+    return num;
+
+    return 0;
 }
 
 // =================================================================
@@ -38,10 +51,14 @@ unsigned int sumaRecursiva(unsigned int n) {
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity: o(1)
 // =================================================================
-unsigned int sumaDirecta(unsigned int n) {
-	return 0;
+unsigned int sumaDirecta(unsigned int num) {
+    int n=0;
+    n=num*(num+1)/2;
+    return n;
+    return 0;
 }
 
 #endif /* ACTIVITY_H */
+
